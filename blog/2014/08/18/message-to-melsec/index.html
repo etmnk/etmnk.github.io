@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>三菱シーケンサ MELSECに電文を投げる - i think</title>
+  <meta name="author" content="msky026">
+
+  
+  <meta name="description" content="前の投稿からえらい時間が過ぎてしまったんだけども、整理するという意味で書いときたかったこと。
+三菱のシーケンサMELSECのFシリーズとTCP（UDPでも行ける）通信するための制御をPythonで書いた時の話。 基本的にはこちらのページの参考 Perlで三菱シーケンサーとSocket通信 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://msky026.github.io/blog/2014/08/18/message-to-melsec/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+   <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="i think" type="application/atom+xml">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900' rel='stylesheet' type='text/css'>
+
+
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-71859617-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  <style>html{background: url(/images/background.png) no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}</style>
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+</hgroup>
+
+</header>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">三菱シーケンサ MELSECに電文を投げる</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-18T23:27:20+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>前の投稿からえらい時間が過ぎてしまったんだけども、整理するという意味で書いときたかったこと。
+三菱のシーケンサMELSECのFシリーズとTCP（UDPでも行ける）通信するための制御をPythonで書いた時の話。</p>
+
+<p>基本的にはこちらのページの参考</p>
+
+<p><a href="http://www.takach.net/pc/melsec_socket.html">Perlで三菱シーケンサーとSocket通信</a></p>
+
+<p>上記はMCプロトコルの3Eだけど、こちら1Eの話。
+基本的にはマニュアル通りに読み進めて、上記サイトを読み替えればいい。</p>
+
+<p>前回書いたのはマニュアル斜め読みだったので、今度のは実際に動かしたもの。</p>
+
+<p>実例はこちら</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># -*- coding: utf-8 -*-
+</span><span class='line'>import struct
+</span><span class='line'>import binascii
+</span><span class='line'>
+</span><span class='line'>def MakeMessageHeader():
+</span><span class='line'>  """
+</span><span class='line'>  送信電文を作る
+</span><span class='line'>  @return s_data メッセージヘッダ
+</span><span class='line'>  """
+</span><span class='line'>  #サブヘッダ
+</span><span class='line'>  #00 シーケンサのポートの状態を読み出す
+</span><span class='line'>  #02 ヘッダの情報を書込
+</span><span class='line'>  # だいたい書き込む時しか使わない
+</span><span class='line'>  subh =  struct.pack('B', 0x02)
+</span><span class='line'>  #PC番号
+</span><span class='line'>  #FF固定
+</span><span class='line'>  pc = struct.pack('B',0xff)
+</span><span class='line'>  #監視タイマ
+</span><span class='line'>  #2500msの場合 -&gt; 000a
+</span><span class='line'>  cpu_timer = []
+</span><span class='line'>  # リトルエンディアン
+</span><span class='line'>  # 0x000a -&gt; 0x0a 0x00
+</span><span class='line'>  cpu_timer.append(struct.pack('B',0x0a))
+</span><span class='line'>  cpu_timer.append(struct.pack('B',0x00))
+</span><span class='line'>
+</span><span class='line'>  #先頭デバイスアドレス
+</span><span class='line'>  #10進数アドレスを16進数換算で表記
+</span><span class='line'>  # 400のアドレスに書き込む場合は 400を16進数に変換(0x190)
+</span><span class='line'>  #(400)10 -&gt; (0190)16
+</span><span class='line'>  #32バイト詰め
+</span><span class='line'>  hd_addr = []
+</span><span class='line'>  hd_addr.append(struct.pack('B',0x90))
+</span><span class='line'>  hd_addr.append(struct.pack('B',0x01))
+</span><span class='line'>  hd_addr.append(struct.pack('B',0x00))
+</span><span class='line'>  hd_addr.append(struct.pack('B',0x00))
+</span><span class='line'>  hd_addr.append(struct.pack('B',0x00))
+</span><span class='line'>
+</span><span class='line'>  #先頭デバイス
+</span><span class='line'>  #Mデバイスの場合 0x4d20
+</span><span class='line'>  hd = []
+</span><span class='line'>  hd.append(struct.pack('B',0x20))
+</span><span class='line'>  hd.append(struct.pack('B',0x4d))
+</span><span class='line'>
+</span><span class='line'>  #デバイス点数
+</span><span class='line'>  #ここではM400から8ポート分使うものとする
+</span><span class='line'>  d_num = struct.pack('B',0x08)
+</span><span class='line'>
+</span><span class='line'>  #区切り
+</span><span class='line'>  deli = struct.pack('B',0x00)
+</span><span class='line'>
+</span><span class='line'>  #データに詰める
+</span><span class='line'>  s_data = []
+</span><span class='line'>  s_data.append(subh)
+</span><span class='line'>  s_data.append(pc)
+</span><span class='line'>  s_data.append(cpu_timer)
+</span><span class='line'>  s_data.append(hd_addr)
+</span><span class='line'>  s_data.append(hd)
+</span><span class='line'>  s_data.append(d_num)
+</span><span class='line'>  s_data.append(deli)
+</span><span class='line'>
+</span><span class='line'>  return s_data</span></code></pre></td></tr></table></div></figure>
+
+
+<p>おおまかな流れは</p>
+
+<ul>
+<li>サブヘッダ（読み出しか書き込みかの判別）</li>
+<li>PC番号</li>
+<li>監視タイマ</li>
+<li>先頭デバイスアドレス</li>
+<li>先頭デバイス種別</li>
+<li>デバイス点数</li>
+<li>区切り</li>
+</ul>
+
+
+<p>の流れでヘッダの完成。
+区切りはヘッダ部とデータ部の切り分けのため、らしい。</p>
+
+<p>データ部の書き方は、1バイトの上位バイト下位バイトでデバイス2点のオンオフを判別する。
+例としてこんな感じ。</p>
+
+<p>0x11010011 &lt;- 1:ON 2:ON 3:OFF 4:ON 5:0FF 6:OFF 7:ON 8:ON</p>
+
+<p>データの格納は取り敢えず先頭から書いとけばいい。
+0x11
+0x01
+0x00
+0x11
+の順で。</p>
+
+<p>これをさっきのヘッダの後にくっつけて送れば、OK。</p>
+
+<p>これで他に分からないところがあったら、マニュアル見てください。。（丸投げ</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">msky026</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-18T23:27:20+09:00" pubdate data-updated="true"></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  <!-- hatebu-start -->
+  
+    <a href="http://b.hatena.ne.jp/entry/http://msky026.github.io/blog/2014/08/18/message-to-melsec/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+  
+  <!-- hatebu-end -->
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://msky026.github.io/blog/2014/08/18/message-to-melsec/" data-via="msky026" data-counturl="http://msky026.github.io/blog/2014/08/18/message-to-melsec/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/08/21/break-time-night-vol1/" title="Next Post: 「BREAK TIME NIGHT Vol.1 HTML5とPDCAサイクル」に行ってきた">「BREAK TIME NIGHT Vol.1 HTML5とPDCAサイクル」に行ってきた &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    
+<section>
+  <h1>About Me</h1>
+  <div id="twitter-profile" style="margin-top:0.5em;">
+    <p>
+      <strong>msky026</strong> 
+      (<a href="http://twitter.com/msky026">@msky026</a>)
+    </p>
+    <p>クラウド系デベロッパー。膝に矢を受けたためテコは休業中。開発はそこそこ。インフラは少し。C/C++、Ruby、Haskell、CrystalとともにSalesforceとHerokuに生きる人。</p>
+  </div>
+  <script type="text/javascript">
+    $(function(){
+        var container = $('#twitter-profile'),
+            user = "msky026";
+        
+        function parseTwLinks(s) {
+          var twUrl = "http://www.twitter.com/"
+          s = s.replace(/ (@([\w]+))/g, function(match, p1, p2) {
+              return " <a href='"+twUrl+p2+"'>"+p1+"</a>"
+          }).replace(/ (#([\w]+))/g, function(match, p1, p2) {
+              return " <a href='"+twUrl+"#!/search?q=%23"+p2+"'>"+p1+"</a>"
+          })
+          return s
+        }
+
+        $.ajax({
+            url: "http://api.twitter.com/1/users/show.json?include_entities=false&screen_name="+user+"&callback=?"
+          , type: 'GET'
+          , dataType: 'jsonp'
+          , error: function (err) { $('#twitter-profile').addClass('error');  }
+          , success: function(data) {
+              container.html('<img class="left" src="http://api.twitter.com/1/users/profile_image/'+user+'.json?size=bigger" alt="@'+user+'"><p><strong>'+data.name+'</strong> (<a href="http://twitter.com/'+user+'">@'+user+'</a>)<br/>'+data.location+'</p><p>'+parseTwLinks(data.description)+'</p>');
+            }
+        })
+      });
+  </script>
+</section>
+
+<section id="titles">
+  <a href="http://msky026.github.io" title="i think"><img id="logo" src="http://msky026.github.io/images/portrait.png" /></a>
+  <h1 id="site_title"><a href="http://msky026.github.io" title="i think">i think</a></h1>
+  <h3 id="site_subtitle">物思フコノ頃</h3>
+</section>
+
+<section id="menu">
+  <ul>
+    <li><i class="fa fa-home fa-lg"></i><a href="http://msky026.github.io"> Home </a></li>
+    <li><i class="fa fa-calendar fa-lg"></i><a href="http://msky026.github.io/blog/archives/"> Archives </a></li>
+    <li><i class="fa fa-user fa-lg"></i><a href="http://msky026.github.io/about/"> About </a></li>
+    <li><i class="fa fa-rss fa-lg"></i><a href="http://msky026.github.io/atom.xml"> Feed </a></li>
+  </ul>
+</section>
+
+<section id="social">
+  
+
+  
+
+  
+
+  
+    <a href="https://github.com/msky026" title="msky026"><i class="fa fa-github fa-2x"></i></a>
+  
+
+  
+
+  
+    <a href="https://twitter.com/msky026" title="msky026"><i class="fa fa-twitter fa-2x"></i></a>
+  
+</section>
+
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/12/30/2015-12-31/">2015年の振り返り</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/19/heroku-advent-2014/">heroku初心者の俺が24時間（※）以内に作れるだけ何か作る</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/18/rubykaigi2014-1stday/">RubyKaigi2014_1日目</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/17/traviscimeetuptokyo20140917/">TravisCIMeetupTokyoに行ってきた話</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/01/openjdk8u-build/">OpenJDK8uをソースからビルドしてみた</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/msky026">@msky026</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'msky026',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2017 - msky026 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'msky026';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://msky026.github.io/blog/2014/08/18/message-to-melsec/';
+        var disqus_url = 'http://msky026.github.io/blog/2014/08/18/message-to-melsec/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

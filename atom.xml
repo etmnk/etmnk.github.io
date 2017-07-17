@@ -1,97 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>i think</title>
-  <meta name="author" content="msky026">
-
-  
-  <meta name="description" content="直前まで某所のイベントに参加していましたので、実はこれを書いているのは12月30日です。結局年が明けてしまいました。 皆様明けましておめでとうございます。 さて、このブログですが、ほぼほぼ1年間のほったらかしでしたが、本体をNitrous.ioに引っ越したので、少々扱いやすくはなっていると思います &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://msky026.github.io/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-   <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="i think" type="application/atom+xml">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
-<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900' rel='stylesheet' type='text/css'>
-
-
-
-
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-71859617-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
-  <style>html{background: url(/images/background.png) no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}</style>
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-</hgroup>
-
-</header>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[i think]]></title>
+  <link href="http://msky026.github.io/atom.xml" rel="self"/>
+  <link href="http://msky026.github.io/"/>
+  <updated>2017-07-18T01:15:45+09:00</updated>
+  <id>http://msky026.github.io/</id>
+  <author>
+    <name><![CDATA[msky026]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2015/12/30/2015-12-31/">2015年の振り返り</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2015-12-30T04:23:31+00:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>直前まで某所のイベントに参加していましたので、実はこれを書いているのは<del>12月30日です。</del>結局年が明けてしまいました。</p>
+  <entry>
+    <title type="html"><![CDATA[2015年の振り返り]]></title>
+    <link href="http://msky026.github.io/blog/2015/12/30/2015-12-31/"/>
+    <updated>2015-12-30T04:23:31+00:00</updated>
+    <id>http://msky026.github.io/blog/2015/12/30/2015-12-31</id>
+    <content type="html"><![CDATA[<p>直前まで某所のイベントに参加していましたので、実はこれを書いているのは<del>12月30日です。</del>結局年が明けてしまいました。</p>
 
 <p>皆様明けましておめでとうございます。</p>
 
@@ -149,42 +76,15 @@
 <p>コミュニティ活動はRubyと、後Crystalも中心になっていくと思います。特にCrystalはまだ自分も貢献できる領域が多々ありますので、非力ながら尽力していく次第です。</p>
 
 <p>皆様、どうぞ本年もよろしくお願い致します。</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/12/19/heroku-advent-2014/">Heroku初心者の俺が24時間（※）以内に作れるだけ何か作る</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-12-19T22:38:13+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>※ただし三食昼寝つきである
+  <entry>
+    <title type="html"><![CDATA[heroku初心者の俺が24時間（※）以内に作れるだけ何か作る]]></title>
+    <link href="http://msky026.github.io/blog/2014/12/19/heroku-advent-2014/"/>
+    <updated>2014-12-19T22:38:13+09:00</updated>
+    <id>http://msky026.github.io/blog/2014/12/19/heroku-advent-2014</id>
+    <content type="html"><![CDATA[<p>※ただし三食昼寝つきである
 ※24時間しか作らないとは言っていない</p>
 
 <p>この記事は <a href="qiita.com/advent-calendar/2014/heroku">Heroku Advent Calendar 2014</a> の20日目(12/20)の投稿です。<br/>
@@ -194,46 +94,199 @@
 
 <p>未だに解決せず、そもそもcoolなtipsを公開してドヤァ！　と出来る実力も無いので、ここは延々更新し続けることをネタにします。</p>
 
-</div>
+<!-- more -->
+
+
+<h3>ルール</h3>
+
+<p>20日の0:00 から23:30ぐらい（変動あり）まで作り続ける。
+途中三食昼寝有り。
+時間が来たらまとめる。出来なかった点は後日に随時追加していく。</p>
+
+<h3>作るもの</h3>
+
+<p>練習なら所謂TODOのWebアプリを作ろうかな、と思ってたんですが、ここはやりかけの「パーフェクトRoR」の6章がまさにそれなので延々そこから作ろうかと。<br/></p>
+
+<h3>材料</h3>
+
+<ul>
+<li>Ruby 2.1.2</li>
+<li>Rails 4.1</li>
+<li>少しの根気</li>
+</ul>
+
+
+<h2>下準備</h2>
+
+<h3>〜0:00</h3>
+
+<p>んでは、取り敢えずrailsの初期化と、githubの登録まで行います。</p>
+
+<p>あ、そうそう、powderどうでしょう、ということで使ってみます。
+daitokaietでも使ってましたけど、これは便利です。</p>
+
+<p>参考<a href="http://mako-wis.hatenablog.com/entry/20131220/p1">#daitokaiet の開発環境構築</a></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl get.pow.cx | sh
+</span><span class='line'>echo "export PATH=$PATH" &gt;&gt; ~/.powconfig</span></code></pre></td></tr></table></div></figure>
+
+
+<p>powderのインストールも続けて</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install powder</span></code></pre></td></tr></table></div></figure>
+
+
+<p>の後に、プロジェクトルートディレクトリに移動して</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>powder link
+</span><span class='line'>powder restart</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これで、<a href="http://#">http://#</a>{projectname}.dev/
+で <a href="http://localhost:3000/">http://localhost:3000/</a> にアクセスしたのと同じページに行けます。
+（このtipsはtwitterのapi連携時に非常に便利になる）
+※ver 0.5になっていないとYosemiteでハマります
+参考<a href="http://qiita.com/jnchito/items/43fcae88cef6df549ec7">Ruby/Rails開発者向け・怖くないYosemiteアップグレードガイド</a></p>
+
+<p>bootstrapを導入。指示のとおりに突っ込んで、etmnk-todo.devを表示したらヘッダ付きの画面が出るようにする。</p>
+
+<h2>開始</h2>
+
+<h3>〜2:00</h3>
+
+<p>twitter apiのOAuthを突っ込む。gemでomniauthとomniauth-twitterを追加。
+何かここで既に難航している。。。
+具体的には /auth/twitter を叩いても、「No route matches [GET] “/auto/twitter"」となる。。</p>
+
+<p>ここらで力尽きたので一旦落ちまする。。</p>
+
+<h3>〜11:00</h3>
+
+<p>起床。結構寝てしまった。では続き。
+気がついたらconfig/secrets.yml をコミットしてしまってたのでこれを履歴ごと削除。
+参考Git の履歴からファイルを完全に削除する</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git filter-branch http://easyramble.com/git-filter-branch.html
+</span><span class='line'>git checkout master
+</span><span class='line'>git filter-branch -f --index-filter 'git rm --cached --ignore-unmatch config/secrets.yml' HEAD
+</span><span class='line'>git push --force origin master</span></code></pre></td></tr></table></div></figure>
+
+
+<p>でも未だにログインできず。。
+「No route matches [GET] “/auto/twitter"」となる。。</p>
+
+<h3>〜12:00</h3>
+
+<p>うあー、ものっそいマヌケなミスが原因だった。。
+/auth/twitter じゃなくて /auto/twitter になってた。。
+何箇所かのtypoを直したら何とかログインできた。。</p>
+
+<p>と、ここで気づいたのが未だにherokuにデプロイしてない。
+登録処理まで行ったらデプロイする。</p>
+
+<h3>〜17:30</h3>
+
+<p>一応イベント登録処理と削除処理まで作ったのでherokuにデプロイした。
+<a href="http://etmnk-todo.herokuapp.com/">etmnk-todo</a></p>
+
+<p>したんだが、CSSが効いてない。。
+調べたら設定が必要なんで足してみた。</p>
+
+<p>Gemfile</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem 'rails_12factor'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>config/environments/production.rb</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>config.serve_static_assets = true</span></code></pre></td></tr></table></div></figure>
+
+
+<p>そして、修正後</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle exec rake assets:precompile RAILS_ENV=production
+</span><span class='line'>git add .
+</span><span class='line'>git commit -m "hoge"
+</span><span class='line'>git push heroku master</span></code></pre></td></tr></table></div></figure>
+
+
+<p>反映されない。。。</p>
+
+<h3>〜21:00</h3>
+
+<p>イベント編集処理を追加。後、postgres使うのを本環境のみにして、ローカルではsqlite3使うように修正。</p>
+
+<p>Gemfile</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>group :development,:test do
+</span><span class='line'>  gem 'sqlite3'
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<p>後config/secrets.ymlはherokuの環境で必要なのと、いちいちそのためにブランチ切るのが面倒になったので、設定だけは環境変数に退避してリポジトリに戻した。</p>
+
+<p>CSSの件は先送りのまま。。</p>
+
+<p>追記 application.html.erb内のタグの閉じ忘れでした。。
+<a href="https://twitter.com/nakazye/status/546273379355881472">ご指摘</a></p>
+
+<p>大感謝！</p>
+
+<h3>〜22:30</h3>
+
+<p>イベント参加機能と、参加者一覧表示を追加。
+目処としてはイベント参加キャンセルまでかな。。</p>
+
+<h2>まとめ</h2>
+
+<p>取り敢えずここで一旦終了です。
+まとめに入りますとこんな感じ。</p>
+
+<ul>
+<li>railsは結構癖が強い</li>
+<li>ルールが未だに掴めない。。</li>
+<li>assetsはハマった。。</li>
+<li>何か自動化するオプションもあるらしいですが、未検証</li>
+<li>テストコードが書けなかった
+
+<ul>
+<li>明日以降の重要課題</li>
+</ul>
+</li>
+</ul>
+
+
+<p>いつものもくもく会の３倍位コードを書き続けましたけど、やってみると結構楽しい。
+年末年始もなんかのお題でやってみたいものです。IoTとか、やりかけのyesodとかでも。</p>
+
+<p>さて、Advent　calendarですが、明日も昨日に引き続いて<a href="https://twitter.com/hkusu">@hkusu</a>_さんの記事で、<a href="http://etmnk.github.io/blog/2014/12/19/heroku-advent-2014/">Node.jsとHerokuでAPIサーバを作る</a>ですよ。</p>
+]]></content>
+  </entry>
   
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/12/19/heroku-advent-2014/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/09/18/rubykaigi2014-1stday/">RubyKaigi2014_1日目</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-18T22:53:55+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>RubyKaigi1日目の内容を忘れないうちに。</p>
+  <entry>
+    <title type="html"><![CDATA[RubyKaigi2014_1日目]]></title>
+    <link href="http://msky026.github.io/blog/2014/09/18/rubykaigi2014-1stday/"/>
+    <updated>2014-09-18T22:53:55+09:00</updated>
+    <id>http://msky026.github.io/blog/2014/09/18/rubykaigi2014-1stday</id>
+    <content type="html"><![CDATA[<p>RubyKaigi1日目の内容を忘れないうちに。</p>
 
 <ul>
 <li>午前中は用事のため欠席。</li>
@@ -322,42 +375,15 @@
 
 <p>駆け足気味ですけど、大体こんな感じでした。今回ノートPC持ってきてないんで、思い出したり、拾える部分はTLからの取得なので結構抜けがあります。
 また、パーティーで喋った「勉強会を主催するならこんなことがやりたい」的なものあるんですが、それはもうちょい纏まってから（大体やりたいことの骨格は決まってますが）にします。</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/09/17/traviscimeetuptokyo20140917/">TravisCIMeetupTokyoに行ってきた話</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-17T23:48:46+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>CI系のツールは実はまだ一度も使ったことのない私が、TravisCIのMeetupイベントに行ってきた時の話をしますと、大体こんな感じでした。</p>
+  <entry>
+    <title type="html"><![CDATA[TravisCIMeetupTokyoに行ってきた話]]></title>
+    <link href="http://msky026.github.io/blog/2014/09/17/traviscimeetuptokyo20140917/"/>
+    <updated>2014-09-17T23:48:46+09:00</updated>
+    <id>http://msky026.github.io/blog/2014/09/17/traviscimeetuptokyo20140917</id>
+    <content type="html"><![CDATA[<p>CI系のツールは実はまだ一度も使ったことのない私が、TravisCIのMeetupイベントに行ってきた時の話をしますと、大体こんな感じでした。</p>
 
 <p>勘所としてはこちらの方を見ながら思い出してます。(LT参加者の方でもあります)</p>
 
@@ -417,42 +443,15 @@
 <p><a href="http://suzukaze.hatenablog.jp/entry/2014/04/25/184456">Web(Rails),iOS(Objective-C),Android(Java)で動作するCI(Continuous Integration)を探す</a></p>
 
 <p>個人的な感想を言うと、値段は多少張りますけども、iOS系をちゃんとテストしてくれるサービスはかなり貴重かと。</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/09/01/openjdk8u-build/">OpenJDK8uをソースからビルドしてみた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-01T22:46:51+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>前のJJUGイベント（ビール片手にLL大会）から、ふとVM触ってみたい、という気持ちがドゥンドゥン出始めまして、取り敢えずJDK8のソースからビルドして環境構築してみよう、と。</p>
+  <entry>
+    <title type="html"><![CDATA[OpenJDK8uをソースからビルドしてみた]]></title>
+    <link href="http://msky026.github.io/blog/2014/09/01/openjdk8u-build/"/>
+    <updated>2014-09-01T22:46:51+09:00</updated>
+    <id>http://msky026.github.io/blog/2014/09/01/openjdk8u-build</id>
+    <content type="html"><![CDATA[<p>前のJJUGイベント（ビール片手にLL大会）から、ふとVM触ってみたい、という気持ちがドゥンドゥン出始めまして、取り敢えずJDK8のソースからビルドして環境構築してみよう、と。</p>
 
 <p>参考にしたページはこちら</p>
 
@@ -522,42 +521,15 @@
 <p><a href="http://www.slideshare.net/torazuka/jvm-28095989">JJUG CCC 2013 Fall「JVMコードリーディング入門-JVMのOS抽象化レイヤーについて-」</a></p>
 
 <p>地道にやっていこうと思います。</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/08/21/break-time-night-vol1/">「BREAK TIME NIGHT Vol.1 HTML5とPDCAサイクル」に行ってきた</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-08-21T23:08:34+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今日は「Break Time Night vol.1 HTML5とPDCAサイクル」に行ってきまして、そのままの勢いでレポ書きます。
+  <entry>
+    <title type="html"><![CDATA[「BREAK TIME NIGHT Vol.1 HTML5とPDCAサイクル」に行ってきた]]></title>
+    <link href="http://msky026.github.io/blog/2014/08/21/break-time-night-vol1/"/>
+    <updated>2014-08-21T23:08:34+09:00</updated>
+    <id>http://msky026.github.io/blog/2014/08/21/break-time-night-vol1</id>
+    <content type="html"><![CDATA[<p>今日は「Break Time Night vol.1 HTML5とPDCAサイクル」に行ってきまして、そのままの勢いでレポ書きます。
 レポというか、どちらかと言うとメモ書きですが。。。</p>
 
 <hr />
@@ -917,42 +889,15 @@ TVの色を拾ったりとかして、表示色を動的に変えることとか
 <p>と、ざっと箇条書きにするとこんな感じです。</p>
 
 <p>読み返してみると、本当に自分用のメモです、本当にありがとうございました。</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/08/18/message-to-melsec/">三菱シーケンサ MELSECに電文を投げる</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-08-18T23:27:20+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>前の投稿からえらい時間が過ぎてしまったんだけども、整理するという意味で書いときたかったこと。
+  <entry>
+    <title type="html"><![CDATA[三菱シーケンサ MELSECに電文を投げる]]></title>
+    <link href="http://msky026.github.io/blog/2014/08/18/message-to-melsec/"/>
+    <updated>2014-08-18T23:27:20+09:00</updated>
+    <id>http://msky026.github.io/blog/2014/08/18/message-to-melsec</id>
+    <content type="html"><![CDATA[<p>前の投稿からえらい時間が過ぎてしまったんだけども、整理するという意味で書いときたかったこと。
 三菱のシーケンサMELSECのFシリーズとTCP（UDPでも行ける）通信するための制御をPythonで書いた時の話。</p>
 
 <p>基本的にはこちらのページの参考</p>
@@ -1121,207 +1066,7 @@ TVの色を拾ったりとかして、表示色を動的に変えることとか
 <p>これをさっきのヘッダの後にくっつけて送れば、OK。</p>
 
 <p>これで他に分からないところがあったら、マニュアル見てください。。（丸投げ</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives/"> Archives </a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    
-<section>
-  <h1>About Me</h1>
-  <div id="twitter-profile" style="margin-top:0.5em;">
-    <p>
-      <strong>msky026</strong> 
-      (<a href="http://twitter.com/msky026">@msky026</a>)
-    </p>
-    <p>クラウド系デベロッパー。膝に矢を受けたためテコは休業中。開発はそこそこ。インフラは少し。C/C++、Ruby、Haskell、CrystalとともにSalesforceとHerokuに生きる人。</p>
-  </div>
-  <script type="text/javascript">
-    $(function(){
-        var container = $('#twitter-profile'),
-            user = "msky026";
-        
-        function parseTwLinks(s) {
-          var twUrl = "http://www.twitter.com/"
-          s = s.replace(/ (@([\w]+))/g, function(match, p1, p2) {
-              return " <a href='"+twUrl+p2+"'>"+p1+"</a>"
-          }).replace(/ (#([\w]+))/g, function(match, p1, p2) {
-              return " <a href='"+twUrl+"#!/search?q=%23"+p2+"'>"+p1+"</a>"
-          })
-          return s
-        }
-
-        $.ajax({
-            url: "http://api.twitter.com/1/users/show.json?include_entities=false&screen_name="+user+"&callback=?"
-          , type: 'GET'
-          , dataType: 'jsonp'
-          , error: function (err) { $('#twitter-profile').addClass('error');  }
-          , success: function(data) {
-              container.html('<img class="left" src="http://api.twitter.com/1/users/profile_image/'+user+'.json?size=bigger" alt="@'+user+'"><p><strong>'+data.name+'</strong> (<a href="http://twitter.com/'+user+'">@'+user+'</a>)<br/>'+data.location+'</p><p>'+parseTwLinks(data.description)+'</p>');
-            }
-        })
-      });
-  </script>
-</section>
-
-<section id="titles">
-  <a href="http://msky026.github.io" title="i think"><img id="logo" src="http://msky026.github.io/images/portrait.png" /></a>
-  <h1 id="site_title"><a href="http://msky026.github.io" title="i think">i think</a></h1>
-  <h3 id="site_subtitle">物思フコノ頃</h3>
-</section>
-
-<section id="menu">
-  <ul>
-    <li><i class="fa fa-home fa-lg"></i><a href="http://msky026.github.io"> Home </a></li>
-    <li><i class="fa fa-calendar fa-lg"></i><a href="http://msky026.github.io/blog/archives/"> Archives </a></li>
-    <li><i class="fa fa-user fa-lg"></i><a href="http://msky026.github.io/about/"> About </a></li>
-    <li><i class="fa fa-rss fa-lg"></i><a href="http://msky026.github.io/atom.xml"> Feed </a></li>
-  </ul>
-</section>
-
-<section id="social">
-  
-
-  
-
-  
-
-  
-    <a href="https://github.com/msky026" title="msky026"><i class="fa fa-github fa-2x"></i></a>
-  
-
-  
-
-  
-    <a href="https://twitter.com/msky026" title="msky026"><i class="fa fa-twitter fa-2x"></i></a>
-  
-</section>
-
-
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2015/12/30/2015-12-31/">2015年の振り返り</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/12/19/heroku-advent-2014/">heroku初心者の俺が24時間（※）以内に作れるだけ何か作る</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/18/rubykaigi2014-1stday/">RubyKaigi2014_1日目</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/17/traviscimeetuptokyo20140917/">TravisCIMeetupTokyoに行ってきた話</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/01/openjdk8u-build/">OpenJDK8uをソースからビルドしてみた</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/msky026">@msky026</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'msky026',
-            count: 3,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - msky026 -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
-      var disqus_shortname = 'msky026';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+</feed>

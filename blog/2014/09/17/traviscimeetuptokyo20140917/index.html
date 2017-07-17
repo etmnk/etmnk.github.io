@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>TravisCIMeetupTokyoに行ってきた話 - i think</title>
+  <meta name="author" content="msky026">
+
+  
+  <meta name="description" content="CI系のツールは実はまだ一度も使ったことのない私が、TravisCIのMeetupイベントに行ってきた時の話をしますと、大体こんな感じでした。 勘所としてはこちらの方を見ながら思い出してます。(LT参加者の方でもあります) shさん＋Asariさん #travisci_jpa &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://msky026.github.io/blog/2014/09/17/traviscimeetuptokyo20140917/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+   <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="i think" type="application/atom+xml">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900' rel='stylesheet' type='text/css'>
+
+
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-71859617-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  <style>html{background: url(/images/background.png) no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}</style>
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+</hgroup>
+
+</header>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">TravisCIMeetupTokyoに行ってきた話</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-17T23:48:46+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>CI系のツールは実はまだ一度も使ったことのない私が、TravisCIのMeetupイベントに行ってきた時の話をしますと、大体こんな感じでした。</p>
+
+<p>勘所としてはこちらの方を見ながら思い出してます。(LT参加者の方でもあります)</p>
+
+<p><a href="http://shigemk2.hatenablog.com/entry/2014/09/17/Josh%E3%81%95%E3%82%93%EF%BC%8BAsari%E3%81%95%E3%82%93_%23travisci_jp">shさん＋Asariさん #travisci_jpa</a></p>
+
+<ul>
+<li>rubyだと複数の言語でそれぞれのテストを試すことが出来る。
+
+<ul>
+<li>例えば1.9系と2.0系、2.1系も</li>
+<li>更にruby-headとか指定しとくと常に最新のバージョンで確認できるよ</li>
+</ul>
+</li>
+<li>でも最新のバージョンとかで失敗した場合はエラーケースから除外することが出来るよ</li>
+<li>仮想化基板はopenvz+docker
+
+<ul>
+<li>openvzはカーネルに組み込むタイプの仮想化ツール（1回だけ試したことがある）</li>
+<li>1回のコミットごとにVM使い捨て</li>
+</ul>
+</li>
+<li>言語ごとの使用率見ると、フリー版だとnode.js、python、ruby、くらいの順
+
+<ul>
+<li>TravisのCEOの人はjsは気に入らないらしい</li>
+<li>法人版ではrubyが最多</li>
+</ul>
+</li>
+<li>出力のタイムアウトは10分だけど、秘密コマンドで延長可能
+
+<ul>
+<li>でも秘密なんで知りたければコード嫁（OSSだから気合でどうにかなる）</li>
+</ul>
+</li>
+<li>Swiftはそのうち対応？（XCodeはNDAがらみで面倒らしい）</li>
+<li>FSのケースセンシティブ（WinとMacはファイル名の大文字小文字区別しない）はハマりどころ
+
+<ul>
+<li>開発と本環境でのOSの違いの問題（開発の環境に対して本環境がMacな人は殆どいない）</li>
+</ul>
+</li>
+</ul>
+
+
+<p>など。（CEOのJosh氏のスピーチは英語だったのでスライドと単語とTwitterのTLで補完）</p>
+
+<p>当方、途中からハンズオンを始めて、Travisのアカウントをgithubで取得し、前半のライブコーディングの内容を写経したり、エラーに悩まされたり、実はただのtypoだったり、と。</p>
+
+<p>懇親会でCircleCI使ってる人の話を伺うと、大体CircleCIと似た感じ、と。ただし、XCodeでテスト出来るのは美味しい。でも高いよね、と。</p>
+
+<p>値段はこちらですか。</p>
+
+<p><a href="https://travis-ci.com/plans">TravisCI Plans</a></p>
+
+<p>その他、各種のCIサービスの比較をまとめてるサイトはこちら</p>
+
+<p><a href="http://suzukaze.hatenablog.jp/entry/2014/04/25/184456">Web(Rails),iOS(Objective-C),Android(Java)で動作するCI(Continuous Integration)を探す</a></p>
+
+<p>個人的な感想を言うと、値段は多少張りますけども、iOS系をちゃんとテストしてくれるサービスはかなり貴重かと。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">msky026</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-17T23:48:46+09:00" pubdate data-updated="true"></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  <!-- hatebu-start -->
+  
+    <a href="http://b.hatena.ne.jp/entry/http://msky026.github.io/blog/2014/09/17/traviscimeetuptokyo20140917/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+  
+  <!-- hatebu-end -->
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://msky026.github.io/blog/2014/09/17/traviscimeetuptokyo20140917/" data-via="msky026" data-counturl="http://msky026.github.io/blog/2014/09/17/traviscimeetuptokyo20140917/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/09/01/openjdk8u-build/" title="Previous Post: OpenJDK8uをソースからビルドしてみた">&laquo; OpenJDK8uをソースからビルドしてみた</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/09/18/rubykaigi2014-1stday/" title="Next Post: RubyKaigi2014_1日目">RubyKaigi2014_1日目 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    
+<section>
+  <h1>About Me</h1>
+  <div id="twitter-profile" style="margin-top:0.5em;">
+    <p>
+      <strong>msky026</strong> 
+      (<a href="http://twitter.com/msky026">@msky026</a>)
+    </p>
+    <p>クラウド系デベロッパー。膝に矢を受けたためテコは休業中。開発はそこそこ。インフラは少し。C/C++、Ruby、Haskell、CrystalとともにSalesforceとHerokuに生きる人。</p>
+  </div>
+  <script type="text/javascript">
+    $(function(){
+        var container = $('#twitter-profile'),
+            user = "msky026";
+        
+        function parseTwLinks(s) {
+          var twUrl = "http://www.twitter.com/"
+          s = s.replace(/ (@([\w]+))/g, function(match, p1, p2) {
+              return " <a href='"+twUrl+p2+"'>"+p1+"</a>"
+          }).replace(/ (#([\w]+))/g, function(match, p1, p2) {
+              return " <a href='"+twUrl+"#!/search?q=%23"+p2+"'>"+p1+"</a>"
+          })
+          return s
+        }
+
+        $.ajax({
+            url: "http://api.twitter.com/1/users/show.json?include_entities=false&screen_name="+user+"&callback=?"
+          , type: 'GET'
+          , dataType: 'jsonp'
+          , error: function (err) { $('#twitter-profile').addClass('error');  }
+          , success: function(data) {
+              container.html('<img class="left" src="http://api.twitter.com/1/users/profile_image/'+user+'.json?size=bigger" alt="@'+user+'"><p><strong>'+data.name+'</strong> (<a href="http://twitter.com/'+user+'">@'+user+'</a>)<br/>'+data.location+'</p><p>'+parseTwLinks(data.description)+'</p>');
+            }
+        })
+      });
+  </script>
+</section>
+
+<section id="titles">
+  <a href="http://msky026.github.io" title="i think"><img id="logo" src="http://msky026.github.io/images/portrait.png" /></a>
+  <h1 id="site_title"><a href="http://msky026.github.io" title="i think">i think</a></h1>
+  <h3 id="site_subtitle">物思フコノ頃</h3>
+</section>
+
+<section id="menu">
+  <ul>
+    <li><i class="fa fa-home fa-lg"></i><a href="http://msky026.github.io"> Home </a></li>
+    <li><i class="fa fa-calendar fa-lg"></i><a href="http://msky026.github.io/blog/archives/"> Archives </a></li>
+    <li><i class="fa fa-user fa-lg"></i><a href="http://msky026.github.io/about/"> About </a></li>
+    <li><i class="fa fa-rss fa-lg"></i><a href="http://msky026.github.io/atom.xml"> Feed </a></li>
+  </ul>
+</section>
+
+<section id="social">
+  
+
+  
+
+  
+
+  
+    <a href="https://github.com/msky026" title="msky026"><i class="fa fa-github fa-2x"></i></a>
+  
+
+  
+
+  
+    <a href="https://twitter.com/msky026" title="msky026"><i class="fa fa-twitter fa-2x"></i></a>
+  
+</section>
+
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/12/30/2015-12-31/">2015年の振り返り</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/19/heroku-advent-2014/">heroku初心者の俺が24時間（※）以内に作れるだけ何か作る</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/18/rubykaigi2014-1stday/">RubyKaigi2014_1日目</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/17/traviscimeetuptokyo20140917/">TravisCIMeetupTokyoに行ってきた話</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/01/openjdk8u-build/">OpenJDK8uをソースからビルドしてみた</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/msky026">@msky026</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'msky026',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2017 - msky026 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'msky026';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://msky026.github.io/blog/2014/09/17/traviscimeetuptokyo20140917/';
+        var disqus_url = 'http://msky026.github.io/blog/2014/09/17/traviscimeetuptokyo20140917/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
