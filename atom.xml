@@ -4,7 +4,7 @@
   <title><![CDATA[i think]]></title>
   <link href="http://msky026.github.io/atom.xml" rel="self"/>
   <link href="http://msky026.github.io/"/>
-  <updated>2018-11-01T00:32:47+09:00</updated>
+  <updated>2018-11-01T00:38:03+09:00</updated>
   <id>http://msky026.github.io/</id>
   <author>
     <name><![CDATA[msky026]]></name>
@@ -27,6 +27,9 @@
 <p>（やっぱりブログサービスはローカルで扱うより、クラウドサービス的な使い方ができないと安心できないところがあるので）</p>
 
 <p>さて、去年の振り返りとなってしまいましたが、どんな1年だったかをおおまかに振り返ってみます。</p>
+
+<!-- more -->
+
 
 <h2>Rubyistとして</h2>
 
